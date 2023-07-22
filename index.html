@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Generator</title>
+  <style type="text/css">
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  }
+  
+  .container {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  }
+  
+  .btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  }
+  
+  .btn:hover {
+  background-color: #0056b3;
+  }
+  
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="quote" id="quote">
+      "This is a sample quote."
+    </div>
+    <button class="btn" id="generateBtn">Generate Quote</button>
+  </div>
+
+  <script>
+  const quotes = [
+  "Be yourself; everyone else is already taken. - Oscar Wilde",
+  "You only live once, but if you do it right, once is enough. - Mae West",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+  "The best time to plant a tree was 20 years ago. The second best time is now. - Chinese Proverb",
+  "Life is what happens when you're busy making other plans. - John Lennon",
+  "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
+  "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+  "Believe you can and you're halfway there. - Theodore Roosevelt",
+  "Happiness is not something ready-made. It comes from your own actions. - Dalai Lama"
+  ];
+  
+  function generateQuote() {
+  const randomNumber = Math.floor(Math.random() * quotes.length);
+  const quoteElement = document.getElementById("quote");
+  quoteElement.textContent = quotes[randomNumber];
+  }
+  
+  const generateBtn = document.getElementById("generateBtn");
+  generateBtn.addEventListener("click", generateQuote);
+  
+  // Generate a quote on page load
+  generateQuote();
+  
+  
+  </script>
+</body>
+</html>
